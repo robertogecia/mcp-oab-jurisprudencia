@@ -167,7 +167,8 @@ mas não os tetos de janela e dia (senão levaria semanas). Nenhuma ferramenta M
   bloco `R1` é regressão de uso real. Roda também no CI a cada push.
 - Parser ou extrator mudou? **Suba `PARSER_VERSAO`**: o índice se refaz sozinho a partir do texto guardado, sem rede.
 - `python3 servidor_tedsp.py --sincronizar` monta a base inteira (horas); `--exportar-pacote DIR` gera o pacote e o
-  `SHA256SUMS.txt` para o release. O pacote leva só o ementário deontológico — **nunca** o histórico de temas pesquisados,
+  `SHA256SUMS.txt` para o release. `scripts/carga_completa.sh` faz as duas coisas sem supervisão (retoma após cada pausa do
+  disjuntor) e só anexa o pacote ao release se ele passar nas verificações (hash, volume, carga completa, nada além do ementário). O pacote leva só o ementário deontológico — **nunca** o histórico de temas pesquisados,
   recibos ou a base disciplinar.
 
 Integrações opcionais para quem usa Claude Code (skill autônoma e trecho de roteamento para agente de pesquisa):

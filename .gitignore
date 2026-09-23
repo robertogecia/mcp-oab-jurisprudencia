@@ -1,0 +1,12 @@
+# dados locais: índice, recibos, disjuntor e o histórico de temas pesquisados — NUNCA publicar
+dados/
+pacote/
+recibos/
+.disjuntor_estado_tedsp.json*
+# ambiente e lixo
+.venv/
+__pycache__/
+*.bak-*
+_bak/
+.DS_Store
+*.log

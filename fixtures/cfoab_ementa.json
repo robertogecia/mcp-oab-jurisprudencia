@@ -1,0 +1,1315 @@
+{
+ "resultado": [
+  {
+   "tipoEmenta": "OUTRO",
+   "numeroProcesso": "07.0000.2026.000055-0",
+   "orgaoJulgador": {
+    "_id": "49_119",
+    "idOrganizacao": 49,
+    "codiSetor": 119,
+    "nomeOrganizacao": "Conselho Federal",
+    "nomeSetor": "Primeira Câmara"
+   },
+   "numeroEmenta": "044/2026/PCA",
+   "descricaoEmenta": "Ementa n. 044/2026/PCA. REPRESENTAÇÃO. INSCRIÇÃO SUPLEMENTAR. SERVIDORA PÚBLICA ESTADUAL. IMPEDIMENTO DO ART. 30, I, DO EOAB. AUSÊNCIA DE ANOTAÇÃO NA INSCRIÇÃO ORIGINÁRIA. VÍCIO FORMAL SANÁVEL. REGULARIZAÇÃO SUPERVENIENTE PELA SECCIONAL DE ORIGEM. PERDA DE OBJETO. DEVOLUÇÃO DO FEITO. ",
+   "descricaoAcordao": "Acórdão: Vistos, relatados e discutidos os autos do processo em referência, acordam os membros da Primeira Câmara do Conselho Federal da Ordem dos Advogados do Brasil, observado o quórum exigido no Art. 92 do Regulamento Geral, por unanimidade, julgar improcedente a Representação, nos termos do voto do Relator, determinando-se a devolução dos autos ao Conselho Seccional da OAB/DF, para o regular prosseguimento do processo de inscrição suplementar da advogada F.S.C.Q. (OAB/AC 00.000), em razão do saneamento do vício que ensejou a representação, com a consequente anotação do impedimento da interessada em seu assentamento profissional junto à OAB/AC. Impedidos de votar a  Representantes da OAB/Acre e o Representante da OAB/Distrito Federal. Brasília, 22 de junho de 2026. Roseline Morais, Presidente. Thiago Pires de Melo, Relator.",
+   "publicacaoDiario": {
+    "_id": 1123795,
+    "titulo": "REPRESENTAÇÃO N. 07.0000.2026.000055-0/PCA.",
+    "dataPublicacao": "2026-07-16T03:00:00.000+0000",
+    "edicao": 1902,
+    "ano": "VIII",
+    "pagina": 4
+   },
+   "reuniao": {
+    "idReuniaoSessao": 8907,
+    "idReuniaoSessaoProtocolo": 210362,
+    "nome": "638º Sessão dia 22/06/2026",
+    "data": "2026-06-22T12:00:00.000+0000"
+   },
+   "apresentarVotos": false,
+   "documentos": [],
+   "relatores": [
+    {
+     "_id": 844399,
+     "idMembro": 19603,
+     "tipo": "Relator Atual",
+     "nome": "THIAGO PIRES DE MELO",
+     "cargo": "Conselheiro Federal"
+    }
+   ],
+   "dispositivosNormativos": [
+    {
+     "_id": 567,
+     "descricao": "EAOAB - Art. 30 inciso I"
+    }
+   ],
+   "id": "6a593d26828dbe4b9fb06c14",
+   "partes": [
+    {
+     "_id": 1998551,
+     "tipo": "Representante(s)",
+     "apresentarNomeAbreviado": false,
+     "nome": "Conselho Seccional da OAB/Distrito Federal"
+    },
+    {
+     "_id": 1998553,
+     "tipo": "Representado(a/s)",
+     "apresentarNomeAbreviado": false,
+     "nome": "Conselho Seccional da OAB/Acre"
+    },
+    {
+     "_id": 1998563,
+     "tipo": "Interessado(a/s)",
+     "apresentarNomeAbreviado": false,
+     "nome": "F.S.C.Q."
+    }
+   ],
+   "score": 9.05356502532959,
+   "highlight": [
+    {
+     "score": 1.393048882484436,
+     "path": "descricaoAcordao",
+     "texts": [
+      {
+       "value": "Acórdão: Vistos, relatados e discutidos os autos do processo em referência, acordam os membros da Primeira Câmara do Conselho Federal da Ordem dos Advogados do Brasil, observado o quórum exigido no Art. 92 do Regulamento Geral, por unanimidade, julgar improcedente a Representação, nos termos do voto do Relator, determinando-se a devolução dos autos ao Conselho Seccional da OAB/DF, para o regular prosseguimento do processo de ",
+       "type": "text"
+      },
+      {
+       "value": "inscrição",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "suplementar",
+       "type": "hit"
+      },
+      {
+       "value": " da advogada F.S.C.Q. (OAB/AC 00.000), em razão do saneamento do vício que ensejou a representação, com a consequente anotação do impedimento da interessada em seu assentamento profissional junto à OAB/AC. ",
+       "type": "text"
+      }
+     ]
+    },
+    {
+     "score": 4.941452980041504,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "INSCRIÇÃO",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "SUPLEMENTAR",
+       "type": "hit"
+      },
+      {
+       "value": ". ",
+       "type": "text"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipoEmenta": "OUTRO",
+   "orgaoJulgador": {
+    "_id": "49_119",
+    "idOrganizacao": 49,
+    "codiSetor": 119,
+    "nomeOrganizacao": "Conselho Federal",
+    "nomeSetor": "Primeira Câmara"
+   },
+   "numeroEmenta": null,
+   "descricaoEmenta": "Representação. Ausência de prova ou indício de fraude na obtenção da inscrição originária. Válida a inscrição, defere-se pedido de Inscrição Suplementar em outra Seccional. Representação que se rejeita, para deferir o pedido de inscrição suplementar pleiteado.  (Proc. 5.097/97/PCA, Rel. Elena Natch Fortes (RR), Ementa 012/99/PCA, julgamento: 08.02.99, por unanimidade, DJ 15.03.99, p. 28, S1) ",
+   "descricaoAcordao": "",
+   "apresentarVotos": false,
+   "dataDecisao": "2001-01-01T03:00:00.000+0000",
+   "documentos": [],
+   "relatores": [
+    {
+     "idMembro": 15106,
+     "tipo": "Relator",
+     "nome": "ELENA NATCH FORTES",
+     "cargo": "Membro"
+    }
+   ],
+   "dispositivosNormativos": [],
+   "informacoesComplementares": {
+    "numeroProcessoAntigo": "751"
+   },
+   "id": "697b908cb87b8d7f87480455",
+   "partes": [],
+   "score": 5.255948543548584,
+   "highlight": [
+    {
+     "score": 3.001727819442749,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "Válida a inscrição, defere-se pedido de ",
+       "type": "text"
+      },
+      {
+       "value": "Inscrição",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "Suplementar",
+       "type": "hit"
+      },
+      {
+       "value": " em outra Seccional. ",
+       "type": "text"
+      }
+     ]
+    },
+    {
+     "score": 2.871837615966797,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "Representação que se rejeita, para deferir o pedido de ",
+       "type": "text"
+      },
+      {
+       "value": "inscrição",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "suplementar",
+       "type": "hit"
+      },
+      {
+       "value": " pleiteado.  ",
+       "type": "text"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipoEmenta": "OUTRO",
+   "orgaoJulgador": {
+    "_id": "49",
+    "idOrganizacao": 49,
+    "nomeOrganizacao": "Conselho Federal"
+   },
+   "numeroEmenta": null,
+   "descricaoEmenta": "Representação nº 5097/97/PCA. Representante: Conselho Seccional da OAB/São Paulo. Representado: Conselho Seccional da OAB/Mato Grosso do Sul. Interessado: Norberto Ramos Borba. Relator: Conselheira Helena Natch Fortes (RR). EMENTA 012/99/PCA. REPRESENTAÇÃO. Ausência de prova ou indício de fraude na obtenção da inscrição originária. Válida a inscrição, defere-se pedido de INSCRIÇÃO SUPLEMENTAR em outra Seccional. Representação em que se rejeira, para deferir o pedido de inscrição suplementar pleiteado. ACÓRDÃO: Vistos, relatados e discutidos os presentes autos, acordam os membros da Primeira Câmara do Conselho Federal da Ordem dos Advogados do Brasil, à unanimidade de votos, rejeitar a Representação para, deferir a inscrição suplementar. Brasília, 08 de fevereiro de 1999. MARCELO GUIMARÃES DA ROCHA E SILVA, Presidente da Primeira Câmara. ELENA NATCH FORTES, Conselheira Relatora. (DJ. 15/03/1999, p. 28, S1)",
+   "descricaoAcordao": "",
+   "apresentarVotos": false,
+   "dataDecisao": "1999-03-15T03:00:00.000+0000",
+   "documentos": [],
+   "relatores": [
+    {
+     "idMembro": 15106,
+     "tipo": "Relator",
+     "nome": "ELENA NATCH FORTES",
+     "cargo": "Membro"
+    }
+   ],
+   "dispositivosNormativos": [],
+   "informacoesComplementares": {
+    "numeroProcessoAntigo": "5097/97/PCA"
+   },
+   "id": "697b908cb87b8d7f8747f44d",
+   "partes": [],
+   "score": 5.154645919799805,
+   "highlight": [
+    {
+     "score": 3.560148239135742,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "Válida a inscrição, defere-se pedido de ",
+       "type": "text"
+      },
+      {
+       "value": "INSCRIÇÃO",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "SUPLEMENTAR",
+       "type": "hit"
+      },
+      {
+       "value": " em outra Seccional. ",
+       "type": "text"
+      }
+     ]
+    },
+    {
+     "score": 3.398404598236084,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "Representação em que se rejeira, para deferir o pedido de ",
+       "type": "text"
+      },
+      {
+       "value": "inscrição",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "suplementar",
+       "type": "hit"
+      },
+      {
+       "value": " pleiteado. ",
+       "type": "text"
+      }
+     ]
+    },
+    {
+     "score": 2.0063788890838623,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "ACÓRDÃO: Vistos, relatados e discutidos os presentes autos, acordam os membros da Primeira Câmara do Conselho Federal da Ordem dos Advogados do Brasil, à unanimidade de votos, rejeitar a Representação para, deferir a ",
+       "type": "text"
+      },
+      {
+       "value": "inscrição",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "suplementar",
+       "type": "hit"
+      },
+      {
+       "value": ". ",
+       "type": "text"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipoEmenta": "OUTRO",
+   "numeroProcesso": "19.0000.2024.000799-5",
+   "orgaoJulgador": {
+    "_id": "49_119",
+    "idOrganizacao": 49,
+    "codiSetor": 119,
+    "nomeOrganizacao": "Conselho Federal",
+    "nomeSetor": "Primeira Câmara"
+   },
+   "numeroEmenta": "019/2026/PCA",
+   "descricaoEmenta": "EMENTA N. 019/2026/PCA. RECURSO. INSCRIÇÃO SUPLEMENTAR. INCOMPATIBILIDADE. AGENTE SOCIOEDUCATIVO (DEGASE/RJ). ART. 10, § 4º, DA LEI N. 8.906/94. INOBSERVÂNCIA DO PROCEDIMENTO. SOBRESTAMENTO. Verificada possível irregularidade apta a comprometer requisito de inscrição, impõe-se a observância do art. 10, § 4º, da Lei n. 8.906/94, com suspensão do pedido de inscrição suplementar e representação ao Conselho Federal. Necessidade de prévia regularização procedimental antes do exame do mérito recursal. ",
+   "descricaoAcordao": "Acórdão: Vistos, relatados e discutidos os autos do processo em referência, acordam os membros da Primeira Câmara do Conselho Federal da Ordem dos Advogados do Brasil, observado o quórum exigido no Art. 92 do Regulamento Geral, por unanimidade sobrestar o julgamento do presente recurso, conforme definido no art. 10, §4º da Lei n.8.906/94, determinando o encaminhamento dos autos em diligência ao Conselho Seccional da OAB/Rio de Janeiro, nos termos do voto da Relatora. Impedida de votar a Representante da OAB/Rio de Janeiro. Brasília, 10 de março de 2026. Roseline Morais, Presidente. Simone Lopes de Carvalho e Silva, Relatora.",
+   "publicacaoDiario": {
+    "_id": 1066976,
+    "titulo": "RECURSO N. 19.0000.2024.000799-5/PCA.",
+    "dataPublicacao": "2026-03-25T03:00:00.000+0000",
+    "edicao": 1825,
+    "ano": "VIII",
+    "pagina": 2
+   },
+   "reuniao": {
+    "idReuniaoSessao": 8449,
+    "idReuniaoSessaoProtocolo": 203798,
+    "nome": "635º Sessão dia 10/03/2026",
+    "data": "2026-03-10T12:00:00.000+0000"
+   },
+   "apresentarVotos": false,
+   "documentos": [],
+   "relatores": [
+    {
+     "_id": 776067,
+     "idMembro": 185854,
+     "tipo": "Relator Atual",
+     "nome": "SIMONE LOPES DE CARVALHO E SILVA",
+     "cargo": "Conselheira Federal"
+    }
+   ],
+   "dispositivosNormativos": [
+    {
+     "_id": 261,
+     "descricao": "EAOAB - Art. 10"
+    }
+   ],
+   "id": "69c53a32b8b63f56d63ca79f",
+   "partes": [
+    {
+     "_id": 1391900,
+     "tipo": "Interessado(a/s)",
+     "apresentarNomeAbreviado": false,
+     "nome": "Conselho Seccional da OAB/Rio de Janeiro"
+    },
+    {
+     "_id": 1391901,
+     "tipo": "Recorrente(s)",
+     "apresentarNomeAbreviado": false,
+     "nome": "A.R.J.. "
+    }
+   ],
+   "score": 5.15077543258667,
+   "highlight": [
+    {
+     "score": 4.710107326507568,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "INSCRIÇÃO",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "SUPLEMENTAR",
+       "type": "hit"
+      },
+      {
+       "value": ". ",
+       "type": "text"
+      }
+     ]
+    },
+    {
+     "score": 1.945361614227295,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "Verificada possível irregularidade apta a comprometer requisito de inscrição, impõe-se a observância do art. 10, § 4º, da Lei n. 8.906/94, com suspensão do pedido de ",
+       "type": "text"
+      },
+      {
+       "value": "inscrição",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "suplementar",
+       "type": "hit"
+      },
+      {
+       "value": " e representação ao Conselho Federal. ",
+       "type": "text"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tipoEmenta": "OUTRO",
+   "orgaoJulgador": {
+    "_id": "49",
+    "idOrganizacao": 49,
+    "nomeOrganizacao": "Conselho Federal"
+   },
+   "numeroEmenta": null,
+   "descricaoEmenta": "Representação nº 0004/2004/PCA. Representante: Conselho Seccional da OAB/São Paulo. Representado: Conselho Seccional da OAB/Maranhão. Interessado: Zacarias Bernardes Felix OAB/MA 00.000. Advogado: C.O.S. OAB/SP 00.000. Relatora: Conselheira Ana Maria Morais (GO). EMENTA 031/2004/PCA.  PEDIDO DE INSCRIÇÃO SUPLEMENTAR. Inscrição original regular. Não comprovado que a inscrição principal foi concedida com vício ou irregularidade, nega-se provimento à representação para que, devolvendo-se os autos à Seccional de São Paulo, seja dado prosseguimento ao regular processamento da inscrição suplementar. ACÓRDÃO: Vistos, relatados e discutidos os presentes autos, acordam os membros da Primeira Câmara do Conselho Federal da Ordem dos Advogados do Brasil, à unanimidade de votos, em negar provimento a Representação, concedendo a inscrição suplementar. Brasília, 16 de agosto de 2004. RAIMUNDO CEZAR BRITTO ARAGÃO, Presidente da Primeira Câmara. Ana Maria Morais, Conselheira Relatora. \r\nDJ., 17.09.2004, p.847. S1",
+   "descricaoAcordao": "",
+   "apresentarVotos": false,
+   "dataDecisao": "2004-09-17T03:00:00.000+0000",
+   "documentos": [],
+   "relatores": [
+    {
+     "idMembro": 2260,
+     "tipo": "Relator",
+     "nome": "ANA MARIA MORAIS",
+     "cargo": "Membro"
+    }
+   ],
+   "dispositivosNormativos": [],
+   "informacoesComplementares": {
+    "numeroProcessoAntigo": "0004/2004/PCA"
+   },
+   "id": "697b908cb87b8d7f874806a4",
+   "partes": [],
+   "score": 5.109173774719238,
+   "highlight": [
+    {
+     "score": 4.916414260864258,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "PEDIDO DE ",
+       "type": "text"
+      },
+      {
+       "value": "INSCRIÇÃO",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "SUPLEMENTAR",
+       "type": "hit"
+      },
+      {
+       "value": ". ",
+       "type": "text"
+      }
+     ]
+    },
+    {
+     "score": 2.0476510524749756,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "Não comprovado que a inscrição principal foi concedida com vício ou irregularidade, nega-se provimento à representação para que, devolvendo-se os autos à Seccional de São Paulo, seja dado prosseguimento ao regular processamento da ",
+       "type": "text"
+      },
+      {
+       "value": "inscrição",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "suplementar",
+       "type": "hit"
+      },
+      {
+       "value": ". ",
+       "type": "text"
+      }
+     ]
+    },
+    {
+     "score": 2.0551936626434326,
+     "path": "descricaoEmenta",
+     "texts": [
+      {
+       "value": "ACÓRDÃO: Vistos, relatados e discutidos os presentes autos, acordam os membros da Primeira Câmara do Conselho Federal da Ordem dos Advogados do Brasil, à unanimidade de votos, em negar provimento a Representação, concedendo a ",
+       "type": "text"
+      },
+      {
+       "value": "inscrição",
+       "type": "hit"
+      },
+      {
+       "value": " ",
+       "type": "text"
+      },
+      {
+       "value": "suplementar",
+       "type": "hit"
+      },
+      {
+       "value": ". ",
+       "type": "text"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "metadata": [
+  {
+   "totalRegistros": 239
+  }
+ ],
+ "grupoOrganizacao": [
+  {
+   "_id": 49,
+   "nome": "Conselho Federal",
+   "count": 236
+  },
+  {
+   "_id": 25,
+   "nome": "Conselho Seccional - São Paulo",
+   "count": 3
+  }
+ ],
+ "grupoOrgaoJulgador": [
+  {
+   "_id": "25_438",
+   "nome": "Conselho Seccional - São Paulo/Oitava Câmara Recursal",
+   "count": 1
+  },
+  {
+   "_id": "49",
+   "nome": "Conselho Federal",
+   "count": 184
+  },
+  {
+   "_id": "49_119",
+   "nome": "Conselho Federal/Primeira Câmara",
+   "count": 42
+  },
+  {
+   "_id": "49_118",
+   "nome": "Conselho Federal/Órgão Especial",
+   "count": 9
+  },
+  {
+   "_id": "25_436",
+   "nome": "Conselho Seccional - São Paulo/Sexta Câmara Recursal",
+   "count": 2
+  },
+  {
+   "_id": "49_508",
+   "nome": "Conselho Federal/Terceira Turma da Segunda Câmara",
+   "count": 1
+  }
+ ],
+ "grupoDispositivosNormativos": [
+  {
+   "_id": 1,
+   "nome": "EAOAB - Art. 34 inciso I",
+   "count": 2
+  },
+  {
+   "_id": 261,
+   "nome": "EAOAB - Art. 10",
+   "count": 1
+  },
+  {
+   "_id": 4,
+   "nome": "EAOAB - Art. 34 inciso IV",
+   "count": 1
+  },
+  {
+   "_id": 567,
+   "nome": "EAOAB - Art. 30 inciso I",
+   "count": 1
+  }
+ ],
+ "grupoRelatores": [
+  {
+   "_id": 963,
+   "nome": "ORESTES MUNIZ FILHO",
+   "count": 9
+  },
+  {
+   "_id": 15106,
+   "nome": "ELENA NATCH FORTES",
+   "count": 5
+  },
+  {
+   "_id": 978,
+   "nome": "CELSO CECCATTO",
+   "count": 5
+  },
+  {
+   "_id": 938,
+   "nome": "DEARLEY KÜHN",
+   "count": 5
+  },
+  {
+   "_id": 940,
+   "nome": "GILBERTO PISELO DO NASCIMENTO",
+   "count": 5
+  },
+  {
+   "_id": 1717,
+   "nome": "MEIRE LUCIA GOMES MONTEIRO MOTA COELHO",
+   "count": 4
+  },
+  {
+   "_id": 1716,
+   "nome": "JOSÉ DANILO CORREIA MOTA",
+   "count": 4
+  },
+  {
+   "_id": 111,
+   "nome": "JOSE ANTONIO TADEU GUILHEN",
+   "count": 4
+  },
+  {
+   "_id": 1670,
+   "nome": "MIQUÉIAS MATIAS FERNANDES",
+   "count": 3
+  },
+  {
+   "_id": 909,
+   "nome": "MARCELO CINTRA ZARIF",
+   "count": 3
+  },
+  {
+   "_id": 922,
+   "nome": "JOSÉ BRITO DE SOUZA",
+   "count": 3
+  },
+  {
+   "_id": 966,
+   "nome": "JORGE HÉLIO CHAVES DE OLIVEIRA",
+   "count": 3
+  },
+  {
+   "_id": 16099,
+   "nome": "ALESSANDRO DE PAULA CANEDO",
+   "count": 3
+  },
+  {
+   "_id": 1536,
+   "nome": "PEDRO HENRIQUE BRAGA REYNALDO ALVES",
+   "count": 3
+  },
+  {
+   "_id": 959,
+   "nome": "MARCUS VINICIUS FURTADO COÊLHO",
+   "count": 3
+  },
+  {
+   "_id": 1935,
+   "nome": "MANOEL CAETANO FERREIRA FILHO",
+   "count": 3
+  },
+  {
+   "_id": 1021,
+   "nome": "ROBERTO FERREIRA ROSAS",
+   "count": 3
+  },
+  {
+   "_id": 968,
+   "nome": "ALMINO AFONSO FERNANDES",
+   "count": 3
+  },
+  {
+   "_id": 15413,
+   "nome": "Sebastião Cristovam Fortes Magalhães",
+   "count": 3
+  },
+  {
+   "_id": 964,
+   "nome": "NELIO ROBERTO SEIDL MACHADO",
+   "count": 2
+  },
+  {
+   "_id": 185854,
+   "nome": "SIMONE LOPES DE CARVALHO E SILVA",
+   "count": 2
+  },
+  {
+   "_id": 14581,
+   "nome": "SANDRA KRIEGER GONÇALVES",
+   "count": 2
+  },
+  {
+   "_id": 953,
+   "nome": "MARCELO HENRIQUES RIBEIRO DE OLIVEIRA",
+   "count": 2
+  },
+  {
+   "_id": 980,
+   "nome": "FRANCISCO DE ASSIS CAMELO",
+   "count": 2
+  },
+  {
+   "_id": 15082,
+   "nome": "EDMAR LAZARO BORGES",
+   "count": 2
+  },
+  {
+   "_id": 226,
+   "nome": "FELIPE SARMENTO CORDEIRO",
+   "count": 2
+  },
+  {
+   "_id": 15089,
+   "nome": "ROBERTO DIAS DE CAMPOS",
+   "count": 2
+  },
+  {
+   "_id": 2246,
+   "nome": "SERGIO ALBERTO FRAZAO DO COUTO",
+   "count": 2
+  },
+  {
+   "_id": 1674,
+   "nome": "WALTER DE AGRA JUNIOR",
+   "count": 2
+  },
+  {
+   "_id": 27334,
+   "nome": "RODRIGO SANCHEZ RIOS",
+   "count": 2
+  },
+  {
+   "_id": 28716,
+   "nome": "FÁBIO CORCIOLI MIGUEL",
+   "count": 2
+  },
+  {
+   "_id": 939,
+   "nome": "FREDERICO COELHO DE SOUZA",
+   "count": 2
+  },
+  {
+   "_id": 1273,
+   "nome": "LUIS SARAIVA CORREIA",
+   "count": 2
+  },
+  {
+   "_id": 951,
+   "nome": "MIGUEL EDUARDO BRITTO ARAGAO",
+   "count": 2
+  },
+  {
+   "_id": 926,
+   "nome": "AGESANDRO DA COSTA PEREIRA",
+   "count": 2
+  },
+  {
+   "_id": 903,
+   "nome": "ELOI PINTO DE ANDRADE",
+   "count": 2
+  },
+  {
+   "_id": 20954,
+   "nome": "NEWTON CLEYDE ALVES PEIXOTO",
+   "count": 2
+  },
+  {
+   "_id": 27020,
+   "nome": "SHAYMMON EMANOEL RODRIGUES DE MOURA SOUSA",
+   "count": 2
+  },
+  {
+   "_id": 921,
+   "nome": "JACINTO NELSON DE MIRANDA COUTINHO",
+   "count": 2
+  },
+  {
+   "_id": 929,
+   "nome": "RENATO CASTELO DE OLIVEIRA",
+   "count": 2
+  },
+  {
+   "_id": 925,
+   "nome": "GERALDO ESCOBAR PINHEIRO",
+   "count": 2
+  },
+  {
+   "_id": 8845,
+   "nome": "ROBERTO SERRA DA SILVA MAIA",
+   "count": 1
+  },
+  {
+   "_id": 985,
+   "nome": "MIGUEL OSCAR VIANA PEIXOTO",
+   "count": 1
+  },
+  {
+   "_id": 3028,
+   "nome": "RAFAEL BRAUDE CANTERJI",
+   "count": 1
+  },
+  {
+   "_id": 558,
+   "nome": "HELIO GOMES COELHO JUNIOR",
+   "count": 1
+  },
+  {
+   "_id": 2318,
+   "nome": "ODAIR MARTINI",
+   "count": 1
+  },
+  {
+   "_id": 393,
+   "nome": "FERNANDO CARLOS ARAUJO DE PAIVA",
+   "count": 1
+  },
+  {
+   "_id": 16199,
+   "nome": "JULIANA HOPPNER BUMACHAR SCHMIDT",
+   "count": 1
+  },
+  {
+   "_id": 14569,
+   "nome": "LUCIANO RODRIGUES MACHADO",
+   "count": 1
+  },
+  {
+   "_id": 1675,
+   "nome": "DANIELA RODRIGUES TEIXEIRA",
+   "count": 1
+  },
+  {
+   "_id": 918,
+   "nome": "GLADYS JOUFFROY BITRAN",
+   "count": 1
+  },
+  {
+   "_id": 1072,
+   "nome": "JOSÉ LUIS WAGNER",
+   "count": 1
+  },
+  {
+   "_id": 7708,
+   "nome": "JEDSON MARCHESI MAIOLI",
+   "count": 1
+  },
+  {
+   "_id": 2302,
+   "nome": "ÍMERO DEVENS",
+   "count": 1
+  },
+  {
+   "_id": 27616,
+   "nome": "CRISTIANE DAMASCENO LEITE",
+   "count": 1
+  },
+  {
+   "_id": 2102,
+   "nome": "KATIANNE WIRNA RODRIGUES CRUZ ARAGÃO",
+   "count": 1
+  },
+  {
+   "_id": 91359,
+   "nome": "ERICK ANSELMO BARBOSA",
+   "count": 1
+  },
+  {
+   "_id": 868,
+   "nome": "ROBERTO ANTONIO BUSATO",
+   "count": 1
+  },
+  {
+   "_id": 892,
+   "nome": "FIDES ANGÉLICA DE CASTRO VELOSO MENDES OMMATI",
+   "count": 1
+  },
+  {
+   "_id": 18542,
+   "nome": "RENATA DO AMARAL GONÇALVES",
+   "count": 1
+  },
+  {
+   "_id": 713,
+   "nome": "GUSTAVO DE AZEVEDO BRANCO",
+   "count": 1
+  },
+  {
+   "_id": 14545,
+   "nome": "BERNARDINO DIAS DE SOUZA CRUZ NETO",
+   "count": 1
+  },
+  {
+   "_id": 933,
+   "nome": "ULISSES CESAR MARTINS DE SOUSA",
+   "count": 1
+  },
+  {
+   "_id": 901,
+   "nome": "GISELA GONDIN RAMOS",
+   "count": 1
+  },
+  {
+   "_id": 2207,
+   "nome": "ULISSES RABANEDA DOS SANTOS",
+   "count": 1
+  },
+  {
+   "_id": 15428,
+   "nome": "NEY LUIZ DE FREITAS LEAL",
+   "count": 1
+  },
+  {
+   "_id": 898,
+   "nome": "AMAURI SERRALVO",
+   "count": 1
+  },
+  {
+   "_id": 15117,
+   "nome": "SADY ANTONIO BOESSIO PIGATTO",
+   "count": 1
+  },
+  {
+   "_id": 1005,
+   "nome": "FRANCISCO IRAPUAN PINHO CAMURÇA",
+   "count": 1
+  },
+  {
+   "_id": 15423,
+   "nome": "ORQUINEZIO DE OLIVEIRA",
+   "count": 1
+  },
+  {
+   "_id": 18663,
+   "nome": "FLAVIO DIZ ZVEITER",
+   "count": 1
+  },
+  {
+   "_id": 19512,
+   "nome": "ALEXANDRE MANTOVANI",
+   "count": 1
+  },
+  {
+   "_id": 14574,
+   "nome": "BRUNO DE ALBUQUERQUE BAPTISTA",
+   "count": 1
+  },
+  {
+   "_id": 2340,
+   "nome": "EMERSON DAVIS LEONIDAS GOMES",
+   "count": 1
+  },
+  {
+   "_id": 176,
+   "nome": "HENRI CLAY SANTOS ANDRADE",
+   "count": 1
+  },
+  {
+   "_id": 15092,
+   "nome": "LEIDSON MEIRA E FARIAS",
+   "count": 1
+  },
+  {
+   "_id": 15109,
+   "nome": "OSWALDO JOSE PEDREIRA HORN",
+   "count": 1
+  },
+  {
+   "_id": 1141,
+   "nome": "RENÉ ARIEL DOTTI",
+   "count": 1
+  },
+  {
+   "_id": 731,
+   "nome": "ALESSANDRO DE JESUS UCHÔA DE BRITO",
+   "count": 1
+  },
+  {
+   "_id": 2260,
+   "nome": "ANA MARIA MORAIS",
+   "count": 1
+  },
+  {
+   "_id": 941,
+   "nome": "MARILMA TORRES GOUVEIA DE OLIVEIRA",
+   "count": 1
+  },
+  {
+   "_id": 3868,
+   "nome": "FABRÍCIO DE CASTRO OLIVEIRA",
+   "count": 1
+  },
+  {
+   "_id": 14936,
+   "nome": "HARLEM MOREIRA DE SOUSA",
+   "count": 1
+  },
+  {
+   "_id": 3069,
+   "nome": "ROBERTO CHARLES DE MENEZES DIAS",
+   "count": 1
+  },
+  {
+   "_id": 16205,
+   "nome": "PAULO CESAR SALOMÃO FILHO",
+   "count": 1
+  },
+  {
+   "_id": 181,
+   "nome": "ANTONIO PIMENTEL NETO",
+   "count": 1
+  },
+  {
+   "_id": 878,
+   "nome": "REGINALDO OSCAR DE CASTRO",
+   "count": 1
+  },
+  {
+   "_id": 158,
+   "nome": "ANTÔNIO OSMAN DE SÁ",
+   "count": 1
+  },
+  {
+   "_id": 14536,
+   "nome": "RUY HERMANN ARAUJO MEDEIROS",
+   "count": 1
+  },
+  {
+   "_id": 907,
+   "nome": "JOSÉ EDÍSIO SIMÕES SOUTO",
+   "count": 1
+  },
+  {
+   "_id": 967,
+   "nome": "JORGE JOSÉ ANAICE DA SILVA",
+   "count": 1
+  },
+  {
+   "_id": 140,
+   "nome": "PELOPIDAS SOARES NETO",
+   "count": 1
+  },
+  {
+   "_id": 911,
+   "nome": "FELICÍSSIMO JOSÉ DE SENA",
+   "count": 1
+  },
+  {
+   "_id": 934,
+   "nome": "FRANCISCO EDUARDO TORRES ESGAIB",
+   "count": 1
+  },
+  {
+   "_id": 1761,
+   "nome": "CARLOS JOSE SANTOS DA SILVA",
+   "count": 1
+  },
+  {
+   "_id": 912,
+   "nome": "MANOEL ANTONIO DE OLIVEIRA FRANCO",
+   "count": 1
+  },
+  {
+   "_id": 1081,
+   "nome": "CLOVIS CUNHA DA GAMA MALCHER FILHO",
+   "count": 1
+  },
+  {
+   "_id": 1607,
+   "nome": "SERGIO MURILO DINIZ BRAGA",
+   "count": 1
+  },
+  {
+   "_id": 1038,
+   "nome": "RONALD CARDOSO ALEXANDRINO",
+   "count": 1
+  },
+  {
+   "_id": 15098,
+   "nome": "JOSÉ CARLOS SANTOS CATALDI",
+   "count": 1
+  },
+  {
+   "_id": 15115,
+   "nome": "JOSE ALVINO SANTOS FILHO",
+   "count": 1
+  },
+  {
+   "_id": 992,
+   "nome": "FELIPE AUGUSTO CORTEZ MEIRA DE MEDEIROS",
+   "count": 1
+  },
+  {
+   "_id": 3359,
+   "nome": "CAUPOLICAN PADILHA JUNIOR",
+   "count": 1
+  },
+  {
+   "_id": 4650,
+   "nome": "ARNALDO DE AGUIAR MACHADO JUNIOR",
+   "count": 1
+  },
+  {
+   "_id": 15409,
+   "nome": "DANIEL FABIO JACOB NOGUEIRA",
+   "count": 1
+  },
+  {
+   "_id": 4162,
+   "nome": "EDILSON OLIVEIRA E SILVA",
+   "count": 1
+  },
+  {
+   "_id": 108,
+   "nome": "FRANCISCO ANIS FAIAD",
+   "count": 1
+  },
+  {
+   "_id": 1635,
+   "nome": "MAURICIO GENTIL MONTEIRO",
+   "count": 1
+  },
+  {
+   "_id": 1665,
+   "nome": "GUILHERME OCTAVIO BATOCHIO",
+   "count": 1
+  },
+  {
+   "_id": 170,
+   "nome": "RAFAEL DE ASSIS HORN",
+   "count": 1
+  },
+  {
+   "_id": 936,
+   "nome": "CARLOS ROBERTO DE SIQUEIRA CASTRO",
+   "count": 1
+  },
+  {
+   "_id": 889,
+   "nome": "EDGARD LUIZ CAVALCANTI DE ALBUQUERQUE",
+   "count": 1
+  },
+  {
+   "_id": 122,
+   "nome": "ANGELA SERRA SALES",
+   "count": 1
+  },
+  {
+   "_id": 1032,
+   "nome": "PAULO LOPO SARAIVA",
+   "count": 1
+  },
+  {
+   "_id": 1603,
+   "nome": "VALERIA LAUANDE CARVALHO COSTA",
+   "count": 1
+  },
+  {
+   "_id": 1720,
+   "nome": "AFEIFE MOHAMAD HAJJ",
+   "count": 1
+  },
+  {
+   "_id": 869,
+   "nome": "ESDRAS DANTAS DE SOUZA",
+   "count": 1
+  },
+  {
+   "_id": 920,
+   "nome": "ALEXANDER LADISLAU MENEZES",
+   "count": 1
+  },
+  {
+   "_id": 946,
+   "nome": "ROMANY ROLAND CANSANCÃO MOTA",
+   "count": 1
+  },
+  {
+   "_id": 1673,
+   "nome": "VITAL BEZERRA LOPES",
+   "count": 1
+  },
+  {
+   "_id": 917,
+   "nome": "GUARACY DA SILVA FREITAS",
+   "count": 1
+  },
+  {
+   "_id": 947,
+   "nome": "DAYLTON ANCHIETA SILVEIRA",
+   "count": 1
+  },
+  {
+   "_id": 16693,
+   "nome": "JOSÉ SÉRGIO DA SILVA CRISTÓVAM",
+   "count": 1
+  },
+  {
+   "_id": 507,
+   "nome": "JOSÉ PORFÍRIO TELES",
+   "count": 1
+  },
+  {
+   "_id": 15427,
+   "nome": "REGINALD DELMAR HINTZ FELKER",
+   "count": 1
+  },
+  {
+   "_id": 913,
+   "nome": "LUIZ CARLOS LEVENZON",
+   "count": 1
+  },
+  {
+   "_id": 47520,
+   "nome": "SINYA SIMONE GURGEL JUAREZ",
+   "count": 1
+  },
+  {
+   "_id": 391,
+   "nome": "JOSE PAIVA DE SOUZA FILHO",
+   "count": 1
+  },
+  {
+   "_id": 996,
+   "nome": "ASTOR RHEINHEIMER",
+   "count": 1
+  },
+  {
+   "_id": 2255,
+   "nome": "ANTÔNIO CÉZAR ALVES FERREIRA",
+   "count": 1
+  },
+  {
+   "_id": 184762,
+   "nome": "CHRISTINA CORDEIRO DOS SANTOS",
+   "count": 1
+  },
+  {
+   "_id": 782,
+   "nome": "WALTER CANDIDO DOS SANTOS",
+   "count": 1
+  },
+  {
+   "_id": 2239,
+   "nome": "FERDINANDO DAMO",
+   "count": 1
+  },
+  {
+   "_id": 2305,
+   "nome": "JOSE JOAQUIM DE ALMEIDA NETO",
+   "count": 1
+  },
+  {
+   "_id": 2716,
+   "nome": "DANIEL VICTOR DA SILVA FERREIRA",
+   "count": 1
+  },
+  {
+   "_id": 27016,
+   "nome": "ÉLIDA FABRÍCIA OLIVEIRA MACHADO FRANKLIN",
+   "count": 1
+  },
+  {
+   "_id": 19603,
+   "nome": "THIAGO PIRES DE MELO",
+   "count": 1
+  },
+  {
+   "_id": 1636,
+   "nome": "EVANIO JOSE DE MOURA SANTOS",
+   "count": 1
+  },
+  {
+   "_id": 223,
+   "nome": "ALBERTO ZACHARIAS TORON",
+   "count": 1
+  }
+ ],
+ "grupoTipoEmentas": [
+  {
+   "_id": "PROCESSO_DISCIPLINAR",
+   "nome": "PROCESSO_DISCIPLINAR",
+   "count": 4
+  },
+  {
+   "_id": "OUTRO",
+   "nome": "OUTRO",
+   "count": 235
+  }
+ ]
+}

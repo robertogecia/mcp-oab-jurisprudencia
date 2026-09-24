@@ -1234,7 +1234,8 @@ def _buscar(consulta: str, ano: int | None, relator: str | None, data_inicio: st
                     tf = " " + " ".join(_palavras(r["titulo"] or "")) + " "
                     if all(" " + " ".join(o) + " " in tf for o in obrig):
                         acertos = sum(1 for w in soltas if any(" " + v + " " in tf for v in variantes_numero(w)))
-                        if acertos or not soltas:
+                        # com várias palavras soltas, título que casa só uma é ruído ("inscrição" sozinha traz impedimento, publicidade…)
+                        if (acertos == len(soltas)) if len(soltas) > 1 else (acertos or not soltas):
                             cand.append((acertos, r))
                 cand.sort(key=lambda x: -x[0])
                 if cand:

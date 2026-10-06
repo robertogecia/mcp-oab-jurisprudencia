@@ -74,7 +74,7 @@ import logging
 
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
-VERSAO = "1.6.0"
+VERSAO = "1.7.0"
 REPO_GITHUB = "robertogecia/mcp-oab-jurisprudencia"
 SITE = "https://www.oabsp.org.br"
 URL_LISTA = SITE + "/_ajax/ementario.php"
@@ -1433,7 +1433,7 @@ def _posicao_generica(texto: str, meio: int, ementa=None, relatorio=None, votos=
         if a <= meio < b:
             tn = _norm1(texto[a:b])
             disp = disp_ini if (disp_ini is not None and a <= disp_ini < b) else -1
-            for m in ([] if disp >= 0 else _RE_DISPOSITIVO_VOTO.finditer(tn)):
+            for m in ([] if (disp >= 0 or disp_ini == -1) else _RE_DISPOSITIVO_VOTO.finditer(tn)):
                 if _RE_RESULTADO_VOTO.search(tn[m.start():m.start() + 300]):
                     disp = a + m.start()
             if disp >= 0 and meio >= disp:
@@ -1445,10 +1445,11 @@ def _posicao_generica(texto: str, meio: int, ementa=None, relatorio=None, votos=
     return ""
 
 
-_RE_FECHO_TED = re.compile(r"Proc(?:esso|\.)?[ \t]*(?:n[º°.]?[ \t]*)?[\dE][\d.\-/E ]{3,40}?[ \t]*[-–][ \t]*v\.[ \t]*[um]\.[^\n]*", re.I)
+_RE_FECHO_TED = re.compile(r"Proc(?:esso|\.)?[ \t]*(?:n[º°.]?[ \t]*)?[\dE][\d.\-/E ]{3,40}?[ \t]*[-–,][ \t]*v\.[ \t]*[um]\.[^\n]*", re.I)
 _RE_CAB_TED = re.compile(r"(?m)^[ \t]*(?:[IVX]{1,4}[ \t]*[.–-][ \t]*|\d{1,2}[ \t]*[.–-][ \t]*)?(RELAT[ÓO]RIO(?:[ \t]+E[ \t]+(?:PARECER|VOTO))?|CONSULTA(?:[ \t]+E[ \t]+RELAT[ÓO]RIO)?|PARECER(?:[ \t]+E[ \t]+VOTO)?(?:[ \t]+VENCEDOR)?"
-                         r"|CONCLUS[ÃA]O(?:[ \t]+E[ \t]+VOTO)?|VOTO(?:[ \t]+(?:DIVERGENTE|VENCIDO|VENCEDOR|DO[ \t]+REVISOR|DO[ \t]+RELATOR))?"
-                         r"|DECLARA[ÇC][ÃA]O[ \t]+DE[ \t]+VOTO[^\n]{0,30})[ \t]*[-–:.]?[ \t]*$")
+                         r"|CONCLUS[ÃA]O(?:[ \t]+E[ \t]+VOTO)?|VOTO(?:[ \t]+(?:DIVERGENTE|CONVERGENTE|VENCIDO|VENCEDOR|DO[ \t]+REVISOR|DO[ \t]+RELATOR))?"
+                         r"|DECLARA[ÇC][ÃA]O[ \t]+DE[ \t]+VOTO[^\n]{0,30})[ \t]*(?:[-–:.][ \t]*(?:(?:[A-ZÀ-Ú][a-zà-ú]|[A-ZÀ-Ú][ \t]+[a-zà-ú]|[1-9“\"(])[^\n]*)?)?$")
+# (06/10/2026) o título pode vir na MESMA linha do texto: "RELATÓRIO – Informa a consulente…", "PARECER – O consulente…"
 
 
 def _posicao_ted(texto: str, meio: int) -> str:
@@ -1475,8 +1476,8 @@ def _posicao_ted(texto: str, meio: int) -> str:
                 if er:
                     rel = rel or (p, p + er.end()); votos.append((p + er.end(), f)); continue
             rel = rel or (p, f)
-        elif "divergente" in k or "vencido" in k or k.startswith("declaracao") or "revisor" in k:
-            outros.append((p, f, "VOTO DIVERGENTE ou declaração de voto"))
+        elif "divergente" in k or "convergente" in k or "vencido" in k or k.startswith("declaracao") or "revisor" in k:
+            outros.append((p, f, "VOTO DIVERGENTE ou CONVERGENTE, ou declaração de voto"))
         elif k.startswith("conclus") and votos:
             votos[-1] = (votos[-1][0], f); conclusao = conclusao if conclusao is not None else p
         else:
@@ -1485,6 +1486,11 @@ def _posicao_ted(texto: str, meio: int) -> str:
         votos.insert(0, (fecho[1], marcas[0][0]))   # texto antes do primeiro título: começo do parecer
     if not votos and rel is None and fecho and fecho[1] < n:
         votos = [(fecho[1], n)]   # parecer sem títulos: o que vem depois da linha do julgamento é o parecer do relator
+    _RE_FIM_REL = r"(?<![a-z0-9])(?:e o (?:breve )?relatorio|e o que basta relatar|passo ao parecer|passo a opinar|passo a responder)(?![a-z0-9])"
+    if rel is not None and not votos:
+        er = re.search(_RE_FIM_REL, _norm1(texto[rel[0]:rel[1]]))
+        if er:   # "CONSULTA E RELATÓRIO" que segue direto no parecer, sem outro título
+            votos.append((rel[0] + er.end(), rel[1])); rel = (rel[0], rel[0] + er.end())
     if rel is None and votos:
         # sem título de relatório: a narração da consulta vai até "é o relatório" / "passo ao parecer"
         a0, b0 = votos[0]
@@ -1492,9 +1498,18 @@ def _posicao_ted(texto: str, meio: int) -> str:
                        _norm1(texto[a0:b0]))
         if er:
             rel = (a0, a0 + er.end()); votos[0] = (a0 + er.end(), b0)
-    if fecho and re.search(r"ementa d[oa] rev\.|vencid[oa] [oa] relator|voto vencedor", _norm1(texto[fecho[0]:fecho[1]])) and outros:
+    if (fecho and re.search(r"ementa d[oa] rev\.|vencid[oa] [oa] relator|voto vencedor", _norm1(texto[fecho[0]:fecho[1]])) and outros
+            and not any("vencido" in k for _, k in marcas)):   # com "VOTO VENCIDO" explícito, o texto principal já é o vencedor
         # julgamento por maioria em que venceu o revisor/divergente: o voto dele é o condutor; o parecer do relator ficou vencido
         votos, outros = [(a, b) for a, b, _ in outros], [(a, b, "parecer do RELATOR VENCIDO") for a, b in votos]
+    if conclusao is None:
+        # sem "CONCLUSÃO": fórmula "Por tais razões…" com resultado só no último terço do parecer ("conheço da consulta" no começo
+        # é a admissibilidade, não o dispositivo — validação cega de 06/10/2026)
+        v = next(((a, b) for a, b in votos if a <= meio < b), None)
+        if v:
+            tn = _norm1(texto); corte = v[0] + (v[1] - v[0]) * 2 // 3
+            forms = [x.start() for x in _RE_DISPOSITIVO_VOTO.finditer(tn, corte, v[1]) if _RE_RESULTADO_VOTO.search(tn, x.start(), x.start() + 300)]
+            conclusao = forms[-1] if forms else -1
     return _posicao_generica(texto, meio, ementa=ementa, fecho=fecho, relatorio=rel, votos=votos, outros=outros, disp_ini=conclusao)
 
 

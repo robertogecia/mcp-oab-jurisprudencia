@@ -1,5 +1,13 @@
 # Histórico
 
+- **v1.5.0 (06/10/2026) — negação por alcance e OBITER DICTUM?, medidos às cegas no próprio TED.** `verificar_citacao_ted_sp`
+  passa a usar, dentro do parágrafo, a regra de negação do TJRO (operador sem quebra de oração até o trecho, 3+ palavras dele;
+  "não há dúvida", "não obstante" e "ainda que assim não fosse" não negam) e ganha o alerta OBITER DICTUM? ("ainda que assim não
+  fosse", "a título de argumentação"). TRANSCRIÇÃO, ENTRE ASPAS, VOTO DE OUTRO JULGADOR e DOUTRINA continuam os do TED.
+  Gabarito cego e duplo sobre os pareceres do índice local (130 trechos, kappa 0,87-0,88): **OBITER 92% de precisão** (cobertura
+  baixa por desenho); **NEGAÇÃO 66% de precisão e 65% de cobertura**, contra 80% e 12% da regra antiga (que olhava só 40
+  caracteres): avisa um pouco mais à toa e passa a pegar cinco vezes mais recortes que invertem o parecer. Node (`oab-jurisprudencia-mcpb`)
+  em paridade.
 - **v1.4.0 (23/09/2026) — o que o servidor do TJSE aprendeu, trazido para a OAB, e publicação.** Lido de verdade no código do
   TJSE, não pelo nome das funções; o que não se aplica ficou de fora e está dito abaixo.
   - **De quem é a frase.** `verificar_citacao_ted_sp` lê o parágrafo que contém o trecho e avisa `TRANSCRIÇÃO` (ementa de outro

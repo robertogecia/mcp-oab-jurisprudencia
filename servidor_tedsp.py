@@ -42,6 +42,7 @@ import html
 import json
 import os
 import re
+_RE_ESPACOS_PY = re.compile(r"[ \t\n\r\f\v]+")   # fora da f-string: barra invertida na expressão só vale no Python 3.12+ (CI 3.10, 07/10/2026)
 import sqlite3
 import sys
 import time
@@ -74,7 +75,7 @@ import logging
 
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
-VERSAO = "1.8.0"
+VERSAO = "1.8.1"
 REPO_GITHUB = "robertogecia/mcp-oab-jurisprudencia"
 SITE = "https://www.oabsp.org.br"
 URL_LISTA = SITE + "/_ajax/ementario.php"
@@ -1440,7 +1441,7 @@ def _posicao_generica(texto: str, meio: int, ementa=None, relatorio=None, votos=
                 return "DISPOSITIVO do voto — é o que foi decidido, não a razão de decidir"
             if disp >= 0:
                 return (f"fundamentação do voto condutor, antes do dispositivo (o dispositivo começa {disp - meio} caracteres adiante, em "
-                        f"«{re.sub(r'[ \t\n\r\f\v]+', ' ', texto[disp:disp + 60])}…»)")
+                        f"«{_RE_ESPACOS_PY.sub(' ', texto[disp:disp + 60])}…»)")
             return "fundamentação do voto condutor (dispositivo não localizado por fórmula)"
     return ""
 

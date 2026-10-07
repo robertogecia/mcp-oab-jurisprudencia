@@ -74,7 +74,7 @@ import logging
 
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
-VERSAO = "1.7.0"
+VERSAO = "1.8.0"
 REPO_GITHUB = "robertogecia/mcp-oab-jurisprudencia"
 SITE = "https://www.oabsp.org.br"
 URL_LISTA = SITE + "/_ajax/ementario.php"
@@ -1445,10 +1445,13 @@ def _posicao_generica(texto: str, meio: int, ementa=None, relatorio=None, votos=
     return ""
 
 
-_RE_FECHO_TED = re.compile(r"Proc(?:esso|\.)?[ \t]*(?:n[º°.]?[ \t]*)?[\dE][\d.\-/E ]{3,40}?[ \t]*[-–,][ \t]*v\.[ \t]*[um]\.[^\n]*", re.I)
-_RE_CAB_TED = re.compile(r"(?m)^[ \t]*(?:[IVX]{1,4}[ \t]*[.–-][ \t]*|\d{1,2}[ \t]*[.–-][ \t]*)?(RELAT[ÓO]RIO(?:[ \t]+E[ \t]+(?:PARECER|VOTO))?|CONSULTA(?:[ \t]+E[ \t]+RELAT[ÓO]RIO)?|PARECER(?:[ \t]+E[ \t]+VOTO)?(?:[ \t]+VENCEDOR)?"
+_RE_FECHO_TED = re.compile(r"Proc(?:esso|\.)?[ \t]*(?:n[º°.]?[ \t]*)?[\dE][\d.\-/E ]{3,40}?[ \t]*(?:[-–,][ \t]*)?(?:v\.[ \t]*[um]\.|em[ \t]+\d{1,2}[./]\d{1,2}[./]\d{2,4}\b[^\n]{0,250}?(?:unanim|maioria))[^\n]*", re.I)
+# (07/10/2026) também "Proc. … v.u." sem traço e "Proc. E-3.674/2008 - em 16/10/2008, …por votação unânime/maioria…"
+_RE_CAB_TED = re.compile(r"(?m)^[ \t]*(?:[IVX]{1,4}[ \t]*[.–-][ \t]*|\d{1,2}[ \t]*[.–-][ \t]*)?(Relat[óo]rio(?=[ \t]*[:.]?[ \t]*$)|Parecer(?=[ \t]*[:.]?[ \t]*$)|RELAT[ÓO]RIO(?:[ \t]+E[ \t]+(?:PARECER|VOTO))?|CONSULTA(?:[ \t]+E[ \t]+RELAT[ÓO]RIO)?|PARECER(?:[ \t]+E[ \t]+VOTO|[ \t]*/[ \t]*VOTO)?(?:[ \t]+VENCEDOR)?"
+                         r"|VOTO[ \t-]+VISTA(?:[ \t]+(?:VENCEDOR|VENCIDO|CONVERGENTE|DIVERGENTE))*(?:[ \t]+(?:AO|DO|DA)[ \t]+[A-ZÀ-Ú](?:[A-ZÀ-Ú.º \t]|Dra?\.){2,90})?|VOTO(?:[ \t]+(?:VENCEDOR|VENCIDO|CONVERGENTE|DIVERGENTE|PARCIALMENTE))+[ \t]+(?:AO|DO|DA)[ \t]+[A-ZÀ-Ú](?:[A-ZÀ-Ú.º \t]|Dra?\.){2,90}|VOTO[ \t]+D[OA][ \t]+(?:RELATOR|REVISOR|JULGADOR)A?(?:[ \t]+[A-ZÀ-Ú](?:[A-ZÀ-Ú.º \t]|Dra?\.){1,90})?"
                          r"|CONCLUS[ÃA]O(?:[ \t]+E[ \t]+VOTO)?|VOTO(?:[ \t]+(?:DIVERGENTE|CONVERGENTE|VENCIDO|VENCEDOR|DO[ \t]+REVISOR|DO[ \t]+RELATOR))?"
-                         r"|DECLARA[ÇC][ÃA]O[ \t]+DE[ \t]+VOTO[^\n]{0,30})[ \t]*(?:[-–:.][ \t]*(?:(?:[A-ZÀ-Ú][a-zà-ú]|[A-ZÀ-Ú][ \t]+[a-zà-ú]|[1-9“\"(])[^\n]*)?)?$")
+                         r"|DECLARA[ÇC][ÃA]O[ \t]+DE[ \t]+VOTO[^\n]{0,120})[ \t]*(?:[-–:.][ \t]*(?:(?:[A-ZÀ-Ú][a-zà-ú]|[A-ZÀ-Ú][ \t]+[A-ZÀ-Ú]?[a-zà-ú]|[1-9“\"(])[^\n]*)?)?$")
+# (07/10/2026) "Relatório:" / "Parecer:" sozinhos na linha, "PARECER/VOTO", "PARECER – O Provimento…" (artigo + palavra maiúscula)
 # (06/10/2026) o título pode vir na MESMA linha do texto: "RELATÓRIO – Informa a consulente…", "PARECER – O consulente…"
 
 
@@ -1463,23 +1466,43 @@ def _posicao_ted(texto: str, meio: int) -> str:
     fm = _RE_FECHO_TED.search(texto, 0, corpo0)
     if fm:  # a linha do julgamento pode quebrar: vai até o fim do parágrafo
         fe = texto.find("\n\n", fm.end())
-        fecho = (fm.start(), fe if 0 <= fe < corpo0 + 1 else max(fm.end(), min(corpo0, n)))
+        fecho = (fm.start(), corpo0 if (0 <= fe < corpo0 + 1 and not texto[fe:corpo0].strip()) else
+                 fe if 0 <= fe < corpo0 + 1 else max(fm.end(), min(corpo0, n)))   # só espaço até o 1º título: é do fecho
     else:
         fecho = None
-    ementa = (0, fm.start()) if fm else ((0, corpo0) if corpo0 < n else None)
+    ementa = (0, fm.start()) if fm else ((0, corpo0) if (corpo0 < n or n < 3000) else None)   # sem título nem fecho: verbete curto
     rel, votos, outros, conclusao = None, [], [], None
+    em_outro = False
     for i, (p, k) in enumerate(marcas):
         f = marcas[i + 1][0] if i + 1 < len(marcas) else n
+        # (07/10/2026) VOTO CONVERGENTE / VENCIDO com RELATÓRIO e PARECER próprios: as subseções pertencem a esse voto
+        if em_outro and not any(x in k for x in ("divergente", "convergente", "vencido", "vencedor", "do relator", "revisor")) \
+                and not k.startswith("declaracao"):
+            outros[-1] = (outros[-1][0], f, outros[-1][2]); continue
+        em_outro = False
         if k.startswith("relatorio") or k.startswith("consulta"):
+            if rel is not None and k.startswith("relatorio") and " e " not in k:
+                if votos and re.search(r"(?<![a-z0-9])v\. ?[um]\.", _norm1(texto[max(0, p - 600):p])):
+                    votos[-1] = (votos[-1][0], f); continue   # parecer antigo transcrito, aberto pela própria linha "v.u., em …"
+                if not (votos or outros):
+                    rel = (rel[0], f); continue                # dois RELATÓRIOS seguidos
+                # (07/10/2026) segundo RELATÓRIO depois de um voto: começa o texto de outro julgador cujo título não foi reconhecido
+                outros.append((p, f, "voto de outro julgador (com relatório próprio)")); em_outro = True; continue
             if " e " in k and not k.startswith("consulta e"):   # "RELATÓRIO E PARECER/VOTO": a narração vai até "é o relatório"
                 er = re.search(r"(?<![a-z0-9])e o (?:breve )?relatorio(?![a-z0-9])", _norm1(texto[p:f]))
                 if er:
                     rel = rel or (p, p + er.end()); votos.append((p + er.end(), f)); continue
             rel = rel or (p, f)
-        elif "divergente" in k or "convergente" in k or "vencido" in k or k.startswith("declaracao") or "revisor" in k:
-            outros.append((p, f, "VOTO DIVERGENTE ou CONVERGENTE, ou declaração de voto"))
+        elif (("divergente" in k or "convergente" in k or "vencido" in k or k.startswith("declaracao") or "revisor" in k
+               or "vista" in k) and not ("vencedor" in k and "convergente" not in k)):   # "VOTO VENCEDOR DO REVISOR" conduz
+            outros.append((p, f, "VOTO VENCIDO" if "vencido" in k else "VOTO CONVERGENTE" if "convergente" in k else "VOTO DIVERGENTE"
+                           if "divergente" in k else "VOTO-VISTA" if "vista" in k else "declaração de voto" if k.startswith("declaracao")
+                           else "voto do REVISOR"))
+            em_outro = True
         elif k.startswith("conclus") and votos:
             votos[-1] = (votos[-1][0], f); conclusao = conclusao if conclusao is not None else p
+        elif k.startswith("conclus"):   # CONCLUSÃO logo depois de "CONSULTA E RELATÓRIO": é o dispositivo
+            votos.append((p, f)); conclusao = conclusao if conclusao is not None else p
         else:
             votos.append((p, f))
     if fecho and marcas and marcas[0][0] > fecho[1] + 40:
@@ -1491,6 +1514,18 @@ def _posicao_ted(texto: str, meio: int) -> str:
         er = re.search(_RE_FIM_REL, _norm1(texto[rel[0]:rel[1]]))
         if er:   # "CONSULTA E RELATÓRIO" que segue direto no parecer, sem outro título
             votos.append((rel[0] + er.end(), rel[1])); rel = (rel[0], rel[0] + er.end())
+    if rel is not None:
+        # (07/10/2026) relatório que segue direto no parecer, sem outro título: corta em "é o relatório" ou no começo do parecer
+        tr = _norm1(texto[rel[0]:rel[1]])
+        er = re.search(_RE_FIM_REL, tr)
+        cut = rel[0] + er.end() if er else None
+        if cut is None:
+            ei = re.search(r"(?<![a-z0-9])(?:recebo a consulta|conheco da consulta|conheco a consulta|passo a (?:analisar|examinar)"
+                           r"|passamos ao parecer|consulta (?:deve|merece|pode) ser conhecida)(?![a-z0-9])", tr)
+            ini = texto.rfind("\n", rel[0], rel[0] + ei.start()) + 1 if ei else 0   # o parecer começa no parágrafo da frase
+            cut = ini if (ei and ini > rel[0] + 30) else None
+        if cut is not None and len(texto[cut:rel[1]].strip()) > 200:
+            votos.append((cut, rel[1])); votos.sort(); rel = (rel[0], cut)
     if rel is None and votos:
         # sem título de relatório: a narração da consulta vai até "é o relatório" / "passo ao parecer"
         a0, b0 = votos[0]
@@ -1498,7 +1533,7 @@ def _posicao_ted(texto: str, meio: int) -> str:
                        _norm1(texto[a0:b0]))
         if er:
             rel = (a0, a0 + er.end()); votos[0] = (a0 + er.end(), b0)
-    if (fecho and re.search(r"ementa d[oa] rev\.|vencid[oa] [oa] relator|voto vencedor", _norm1(texto[fecho[0]:fecho[1]])) and outros
+    if (fecho and re.search(r"parecer e ementa d[oa] rev(?:\.|isor)|vencid[oa] [oa] (?:rel\.|relator)|voto vencedor", _norm1(texto[fecho[0]:fecho[1]])) and outros
             and not any("vencido" in k for _, k in marcas)):   # com "VOTO VENCIDO" explícito, o texto principal já é o vencedor
         # julgamento por maioria em que venceu o revisor/divergente: o voto dele é o condutor; o parecer do relator ficou vencido
         votos, outros = [(a, b) for a, b, _ in outros], [(a, b, "parecer do RELATOR VENCIDO") for a, b in votos]
@@ -1640,6 +1675,26 @@ def _negacao_escopo(tn: str, ini0: int, fim: int, bruto: str | None = None) -> b
     q = _RE_QUEBRA_ORACAO.search(tr)
     seg = tr if q is None else tr[:q.start()]
     return len([w for w in seg.strip(" ").split(" ") if w]) >= _NEGACAO_ALCANCE_MIN
+
+# NEGAÇÃO forte × distante (07/10/2026, gabarito cego e duplo neg-val2: 120 trechos novos de TJRO, TJSE, STJ, TCE-RO e TED-OAB,
+# ponderado pela população): com a negação colada ao trecho (até 1 palavra antes) ou existencial ("não há/houve/existe …", até 5),
+# precisão 80% e falso alarme 6%; a regra larga sozinha dava 50% e 33%. O resto que a regra larga pega continua avisado, como
+# "NEGAÇÃO (distante)?", para não perder cobertura (72% somadas; só a forte, 53%).
+_RE_NEG_EXISTENCIAL = re.compile(r"[ \t\n\r\f\v]*(?:ha|houve|havia|existe|existem|existia)(?![a-z0-9])")
+
+
+def _negacao_proxima(tn: str, ini0: int) -> bool:
+    jan = tn[max(0, ini0 - _NEGACAO_JANELA):ini0]
+    op = None
+    for m in _RE_NEG_OPERADOR.finditer(jan):
+        if m.group(0) == "nao" and _RE_NEG_FALSA.match(jan, m.start() + 3):
+            continue
+        op = m
+    if op is None:
+        return False
+    ponte = jan[op.end():]
+    n = len(re.findall(r"[^ \t\n\r\f\v]+", ponte))
+    return n <= 1 or (n <= 5 and _RE_NEG_EXISTENCIAL.match(ponte) is not None)
 
 
 # ENTRE ASPAS: pareia as aspas no documento inteiro e alerta quando a maioria dos caracteres do trecho está dentro de citação.
@@ -1808,7 +1863,8 @@ def _alertas_atribuicao(texto: str, trecho: str, processo_proprio: str, com_fech
             off = len(bruto) - len(par)
             a0, b0 = fx[0] + off, fx[1] + off
             if _negacao_escopo(nt, a0, b0, bruto):
-                av.append("⚠️ NEGAÇÃO LOGO ANTES: o original tem uma negação que alcança o trecho — sem ela, o sentido pode inverter.")
+                av.append("⚠️ NEGAÇÃO LOGO ANTES: o original tem uma negação que alcança o trecho — sem ela, o sentido pode inverter."
+                          if _negacao_proxima(nt, a0) else "⚠️ NEGAÇÃO (distante)?: há uma negação algumas palavras antes, fora do trecho — em geral não inverte o recorte, mas confira a frase inteira.")
             ob = None if any(a.startswith("⚠️ ENTRE ASPAS") or a.startswith("⚠️ TRANSCRIÇÃO") for a in av) else _obiter_antes(nt, a0, b0, bruto)
             if ob:
                 av.append(f"⚠️ OBITER DICTUM?: o trecho vem sob «{ob}» — raciocínio hipotético ou fundamento alternativo; a conclusão do "
